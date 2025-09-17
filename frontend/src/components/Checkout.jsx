@@ -211,7 +211,6 @@
 
 
 
-
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -230,7 +229,28 @@ function Checkout() {
     mobile: '',
     deliveryMethod: '',
     paymentMethod: '',
+    address: '',
+    pincode: '',
+    deliveryDate: '',
+    deliveryTime: '',
+    pickupDate: '',
+    pickupTime: '',
   });
+
+  // Time slots (common for delivery & pickup)
+  const timeSlots = [
+    { label: '8AM - 10AM', start: 8, end: 10 },
+    { label: '10AM - 12PM', start: 10, end: 12 },
+    { label: '12PM - 2PM', start: 12, end: 14 },
+    { label: '2PM - 4PM', start: 14, end: 16 },
+    { label: '4PM - 6PM', start: 16, end: 18 },
+    { label: '6PM - 8PM', start: 18, end: 20 },
+    { label: '8PM - 9PM', start: 20, end: 21 },
+  ];
+
+  // Current date & hour
+  const today = new Date().toISOString().split('T')[0];
+  const currentHour = new Date().getHours();
 
   useEffect(() => {
     if (!cart || !cart.items || cart.items.length === 0) {
@@ -257,7 +277,6 @@ function Checkout() {
     }
 
     try {
-      // Calculate total price safely
       const totalPrice = cart.items.reduce(
         (sum, i) => sum + (Number(i.totalPrice) || 0),
         0
@@ -285,15 +304,25 @@ function Checkout() {
       await axios.post('http://localhost:5000/api/orders', orderData);
 
       alert('Order placed successfully! ✅');
-
-      // 🔴 Clear the cart so that cart count becomes 0
       clearCart();
-
       navigate('/');
     } catch (error) {
       console.error('Order failed:', error.response?.data || error.message);
       alert('Failed to place order. Please try again.');
     }
+  };
+
+  // Render time slot options with dynamic disable
+  const renderTimeOptions = (selectedDate) => {
+    return timeSlots.map((slot, index) => {
+      const isToday = selectedDate === today;
+      const disabled = isToday && currentHour >= slot.end;
+      return (
+        <option key={index} value={slot.label} disabled={disabled}>
+          {slot.label} {disabled ? '(Unavailable)' : ''}
+        </option>
+      );
+    });
   };
 
   if (!cart || !cart.items || cart.items.length === 0) return null;
@@ -344,9 +373,11 @@ function Checkout() {
               formData.deliveryMethod === 'Store Pickup' ? 'selected' : ''
             }`}
             onClick={() =>
-              setFormData((prev) => ({ ...prev, deliveryMethod: 'Store Pickup' }))
+              setFormData((prev) => ({
+                ...prev,
+                deliveryMethod: 'Store Pickup',
+              }))
             }
-            style={{ cursor: 'pointer' }}
           >
             Store Pickup
           </div>
@@ -355,14 +386,88 @@ function Checkout() {
               formData.deliveryMethod === 'Home Delivery' ? 'selected' : ''
             }`}
             onClick={() =>
-              setFormData((prev) => ({ ...prev, deliveryMethod: 'Home Delivery' }))
+              setFormData((prev) => ({
+                ...prev,
+                deliveryMethod: 'Home Delivery',
+              }))
             }
-            style={{ cursor: 'pointer' }}
           >
             Home Delivery
           </div>
         </div>
       </div>
+
+      {/* Extra Fields for Home Delivery */}
+      {formData.deliveryMethod === 'Home Delivery' && (
+        <div className="checkout-section">
+          <div className="section-title">Home Delivery Info</div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="address"
+              placeholder="Full Address"
+              required
+              value={formData.address}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              name="pincode"
+              placeholder="Pincode"
+              required
+              value={formData.pincode}
+              onChange={handleChange}
+            />
+          </div>
+          <div className="form-row">
+            <input
+              type="date"
+              name="deliveryDate"
+              min={today}
+              required
+              value={formData.deliveryDate}
+              onChange={handleChange}
+            />
+            <select
+              name="deliveryTime"
+              required
+              value={formData.deliveryTime}
+              onChange={handleChange}
+            >
+              <option value="">Select Delivery Slot</option>
+              {renderTimeOptions(formData.deliveryDate)}
+            </select>
+          </div>
+        </div>
+      )}
+
+      {/* Extra Fields for Store Pickup */}
+      {formData.deliveryMethod === 'Store Pickup' && (
+        <div className="checkout-section">
+          <div className="section-title">Pickup Info</div>
+          <div className="form-row">
+            <input
+              type="date"
+              name="pickupDate"
+              min={today}
+              required
+              value={formData.pickupDate}
+              onChange={handleChange}
+            />
+            <select
+              name="pickupTime"
+              required
+              value={formData.pickupTime}
+              onChange={handleChange}
+            >
+              <option value="">Select Pickup Slot</option>
+              {renderTimeOptions(formData.pickupDate)}
+            </select>
+          </div>
+        </div>
+      )}
 
       {/* Payment Method */}
       <div className="checkout-section">

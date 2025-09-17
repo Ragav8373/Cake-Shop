@@ -1007,7 +1007,8 @@
   margin-top: 10px;
 }
 
-input, select {
+input,
+select {
   width: 100%;
   padding: 12px;
   font-size: 15px;
@@ -1015,6 +1016,12 @@ input, select {
   border-radius: 4px;
   margin-top: 8px;
   box-sizing: border-box;
+}
+
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .submit-btn {
@@ -1030,6 +1037,7 @@ input, select {
 .submit-btn:hover {
   background-color: #0f1a3a;
 }
+
 .order-table {
   width: 100%;
   border-collapse: collapse;
@@ -1037,7 +1045,8 @@ input, select {
   font-size: 15px;
 }
 
-.order-table th, .order-table td {
+.order-table th,
+.order-table td {
   border: 1px solid #ccc;
   padding: 10px;
   vertical-align: top;
@@ -1048,14 +1057,10 @@ input, select {
   font-weight: bold;
 }
 
-.product-subinfo {
-  font-size: 13px;
-  color: #666;
-}
-
 .summary-row td {
   background-color: #f9f9f9;
 }
+
 .delivery-options {
   display: flex;
   gap: 1rem;
@@ -1074,123 +1079,4 @@ input, select {
   background-color: #f4f4f4;
   border-color: #333;
   font-weight: bold;
-}
-
-.feature-checkboxes {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.feature-checkboxes label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 16px;
-}
-
-.carticon {
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.badge{
-  position: absolute;
-  /* right: 159px;
-  top: 48px; */
-  right: 103px;
-    top: -5px;
-  border-radius: 50% !important;
-}
-.badge.bg-primary {
-  background-color: rgb(98, 19, 5) !important;
-  color: white !important; 
-}
-
-
-.contact-section {
-  display: flex;
-  gap: 30px;
-  padding: 40px;
-  background: #f7f8fa;
-  flex-wrap: wrap;
-}
-
-.contact-form, .contact-info {
-  flex: 1;
-  background: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.small-text {
-  color: #777;
-  font-size: 14px;
-}
-
-h2 {
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.form-row {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 15px;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-}
-
-textarea {
-  resize: none;
-}
-
-.form-buttons {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.btn {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.btn.send {
-  background: #007bff;
-  color: white;
-}
-
-.btn.reset {
-  background: #dc3545;
-  color: white;
-}
-
-.contact-info .info-box {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.icon {
-  font-size: 20px;
-}
-
-.status {
-  margin-top: 10px;
-  font-size: 14px;
-}
-
-.cartinput{
-  margin-top: 8px;
 }
