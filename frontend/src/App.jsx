@@ -20,7 +20,8 @@ import { CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 
 import { useState, useRef, useEffect } from "react";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   const { cartItems, removeFromCart } = useCart();
