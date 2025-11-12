@@ -54,7 +54,7 @@ function AllCategories() {
     <Fragment>
       <h2 className="luxury-title text-center">
         Our Wide Range of <br />
-        Elegant and Luxury Cakes
+        Elegant and Luxury Cakes  
       </h2>
 
       <Container className="py-5 ">

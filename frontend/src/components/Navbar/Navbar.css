@@ -80,10 +80,10 @@
 .nav-link {
   color: #702439 !important;
   font-weight: 600;
-  font-size: 20px !important;
+  font-size: 24px !important;
 }
 .navbar-nav {
-  gap: 1.5rem;
+  gap: 1.7rem;
 }
 
 /* Dropdown menu styling */
