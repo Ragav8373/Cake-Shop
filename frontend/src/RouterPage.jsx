@@ -4,7 +4,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from './components/Home'
 import Cakes from './components/Cakes'
 import About from './components/About'
-import Contact from './components/Contact';
+// import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import Gallery from './components/Gallery';
 import WeddingCakes from './components/cakes/Wedding-cakes';
 import AnniversaryCakes from './components/cakes/Anniversary-cakes';

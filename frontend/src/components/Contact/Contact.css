@@ -1,0 +1,48 @@
+.contact-section {
+  background: #f9fafc;
+}
+
+.contact-card {
+  border-radius: 16px;
+  border: none;
+  background-color: #fff;
+}
+
+.small-text {
+  color: #6c63ff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.contact-info {
+  background: linear-gradient(180deg, #f5f6ff 0%, #e7ebff 100%);
+  border-radius: 16px;
+  color: #333;
+}
+
+.contact-info .info-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.info-box .icon {
+  font-size: 1.8rem;
+  color: #6c63ff;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background-color: #6c63ff;
+  border-color: #6c63ff;
+}
+
+.btn-primary:hover {
+  background-color: #574ee8;
+  border-color: #574ee8;
+}
+
+.alert {
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 500;
+}
