@@ -230,7 +230,7 @@ const AddProduct = () => {
     image: null,
   });
 
-  const categories = ['wedding cakes', 'anniversary cakes', 'celebration', 'baby shower', 'holy communion','smash cakes','half birthday cakes','1st birthday cakes','cake for boys','cake for cirls','theme cakes','heart shape','drip and naked cakes','cheese cakes','photo cakes'];
+  const categories = ['wedding cakes', 'anniversary cakes', 'celebration', 'baby shower', 'holy communion','smash cakes','half birthday cakes','1st birthday cakes','cake for boys','cake for girls','theme cakes','heart shape','drip and naked cakes','cheese cakes','photo cakes'];
 
   const handleChange = (e) => {
     const { name, value, files } = e.target;
