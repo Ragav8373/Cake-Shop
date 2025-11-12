@@ -7,7 +7,7 @@ function Footer(){
     return(
         <div className='footerbg'>
         <div className="footer">
-               <Container>
+               <Container className='py-5'>
                 <Row>
                     <Col sm={12} md={6} lg={3}>
                     <div className='f1'>

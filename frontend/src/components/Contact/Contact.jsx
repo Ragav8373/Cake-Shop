@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, Alert, Card } from "react-bootstrap";
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; // ✅ imported icons
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa"; 
 import "./Contact.css";
 
 export default function Contact() {
