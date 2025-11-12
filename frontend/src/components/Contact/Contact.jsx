@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <Container className="contact-section py-5">
+    <Container className="contact-section py-5" fluid>
       <Row className="justify-content-center">
         {/* Left: Contact Form */}
         <Col md={7}>

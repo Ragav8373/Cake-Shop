@@ -1,0 +1,95 @@
+/* ===== About Section ===== */
+.about-section {
+  padding: 60px 0;
+  background: linear-gradient(180deg, #fff5f8 0%, #ffe6ec 100%);
+}
+
+.about-content {
+  text-align: left;
+  padding: 20px;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  color: #963d57;
+  font-weight: 700;
+}
+
+.about-subtitle {
+  font-size: 1.3rem;
+  color: #b75b79;
+  margin-top: 10px;
+}
+
+.about-text {
+  font-size: 1rem;
+  color: #444;
+  margin: 15px 0;
+  line-height: 1.7;
+}
+
+/* ===== Image Section ===== */
+.about-image-wrapper {
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(150, 61, 87, 0.2);
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .about-content {
+    text-align: center;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 375px) {
+  .about-title {
+    font-size: 1.6rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-text {
+    font-size: 0.85rem;
+  }
+
+  .about-image {
+    width: 90%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 325px) {
+  .about-title {
+    font-size: 1.4rem;
+  }
+
+  .about-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .about-text {
+    font-size: 0.8rem;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+}

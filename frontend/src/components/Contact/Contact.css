@@ -1,23 +1,25 @@
 .contact-section {
-  background: #f9fafc;
+  background-color: #fff5f8; /* soft pink background */
 }
 
 .contact-card {
   border-radius: 16px;
   border: none;
   background-color: #fff;
+  box-shadow: 0 4px 10px rgba(150, 61, 87, 0.15);
 }
 
 .small-text {
-  color: #6c63ff;
+  color: #963d57; /* primary rose tone */
   font-weight: 600;
   letter-spacing: 1px;
 }
 
 .contact-info {
-  background: linear-gradient(180deg, #f5f6ff 0%, #e7ebff 100%);
+  background: linear-gradient(180deg, #ffe6ec 0%, #fbd0da 100%);
   border-radius: 16px;
   color: #333;
+  box-shadow: 0 2px 8px rgba(150, 61, 87, 0.15);
 }
 
 .contact-info .info-text {
@@ -27,22 +29,48 @@
 
 .info-box .icon {
   font-size: 1.8rem;
-  color: #6c63ff;
+  color: #963d57;
   flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.info-box:hover .icon {
+  color: #b74a6e; /* slightly brighter rose hover */
 }
 
 .btn-primary {
-  background-color: #6c63ff;
-  border-color: #6c63ff;
+  background-color: #963d57;
+  border-color: #963d57;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: #574ee8;
-  border-color: #574ee8;
+  background-color: #b74a6e;
+  border-color: #b74a6e;
 }
 
 .alert {
   border-radius: 10px;
   text-align: center;
   font-weight: 500;
+  background-color: #ffe6ec;
+  color: #963d57;
+  border-left: 5px solid #963d57;
+}
+.contact-section {
+  background: linear-gradient(270deg, #fff5f8, #ffe6ec, #fff5f8);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

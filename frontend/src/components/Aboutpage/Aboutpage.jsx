@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Link } from 'react-router-dom'; // ✅ Correct import
 import aboutimg from '../../assets/aboutimg.jpg';
 import './Aboutpage.css';
 
@@ -13,14 +14,15 @@ function Aboutpage() {
               <h1 className="abth1">Aila Cakes & Cafe</h1>
               <p className="abtp1">Where every slice is divine</p>
               <p className="abtp2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-                quaerat eveniet nesciunt possimus, vero facilis quam repudiandae
-                reprehenderit minima provident? Laudantium nisi, consequatur dolores
-                quas laborum repellendus velit ab. Veritatis placeat, sunt saepe
-                illum qui sit ipsum vel possimus autem recusandae hic. Dolor, harum.
-                Reiciendis at earum error sunt voluptatibus?
+                Aila Cakes & Café is a premium cake, pastry, and bakery shop in Erode.
+                We specialize in offering delicious bakery products, cakes, and pastries
+                in fabulous flavors and tastes — all at unbeatable price ranges.
               </p>
-              <button className="abtbtn">Read More</button>
+              
+              {/* ✅ Link navigates properly now */}
+              <Link to="/about" className="abtbtn py-2" >
+                Read More
+              </Link>
             </div>
           </Col>
 
