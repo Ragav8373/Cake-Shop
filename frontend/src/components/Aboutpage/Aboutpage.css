@@ -1,0 +1,140 @@
+/* ===== Carousel Section ===== */
+.bg1 {
+  height: 80vh;
+  object-fit: cover;
+}
+
+/* ===== About Section ===== */
+.abt1 {
+  padding: 60px 0;
+  background-color: #fffaf8;
+}
+
+.abouttxt {
+  text-align: left;
+}
+
+.abth1 {
+  font-size: 2.5rem;
+  color: #702439;
+  font-weight: 700;
+}
+
+.abtp1 {
+  font-size: 1.3rem;
+  color: #b3505c;
+  margin-top: 10px;
+}
+
+.abtp2 {
+  font-size: 1rem;
+  color: #555;
+  margin: 15px 0;
+  line-height: 1.6;
+}
+
+.abtbtn {
+  background-color: #702439;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.abtbtn:hover {
+  background-color: #b3505c;
+}
+
+/* Image */
+.about-img-wrapper {
+  text-align: center;
+}
+
+.aboutimg {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Responsive ===== */
+
+/* For Tablets (768px and below) */
+@media (max-width: 768px) {
+  .bg1 {
+    height: 60vh;
+  }
+
+  .abouttxt {
+    text-align: center;
+  }
+
+  .abth1 {
+    font-size: 2rem;
+  }
+
+  .abtp2 {
+    font-size: 0.95rem;
+  }
+
+  .abtbtn {
+    padding: 8px 20px;
+  }
+}
+
+/* For Mobile (375px width) */
+@media (max-width: 375px) {
+  .bg1 {
+    height: 45vh;
+  }
+
+  .abth1 {
+    font-size: 1.6rem;
+  }
+
+  .abtp1 {
+    font-size: 1rem;
+  }
+
+  .abtp2 {
+    font-size: 0.85rem;
+  }
+
+  .abtbtn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+
+  .aboutimg {
+    width: 90%;
+  }
+}
+
+/* For Small Mobile (325px width) */
+@media (max-width: 325px) {
+  .bg1 {
+    height: 40vh;
+  }
+
+  .abth1 {
+    font-size: 1.4rem;
+  }
+
+  .abtp1 {
+    font-size: 0.9rem;
+  }
+
+  .abtp2 {
+    font-size: 0.8rem;
+  }
+
+  .abtbtn {
+    font-size: 0.8rem;
+    padding: 6px 16px;
+  }
+
+  .aboutimg {
+    width: 100%;
+  }
+}
