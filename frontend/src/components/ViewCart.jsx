@@ -5,7 +5,7 @@ import { FaTrash } from "react-icons/fa6";
 function ViewCart() {
   const { cartItems, removeFromCart } = useCart();
 
-  // ✅Use totalPrice stored in cartItems (fallback to price × quantity if missing)
+  // ✅ Use totalPrice stored in cartItems (fallback to price × quantity if missing)
   const totalPrice = cartItems.reduce(
     (sum, item) => sum + (item.totalPrice || item.price * item.quantity),
     0
