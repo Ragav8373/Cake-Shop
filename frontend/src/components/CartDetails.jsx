@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useMemo } from 'react';
 import { useCart } from '../context/CartContext';
 
-const ProductDetails = () => {
+const CartDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { addToCart, cartItems } = useCart(); // ✅ use from CartContext
@@ -260,4 +260,4 @@ const ProductDetails = () => {
   );
 };
 
-export default ProductDetails;
+export default CartDetails;
