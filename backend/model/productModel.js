@@ -1,3 +1,5 @@
+
+
 const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({
@@ -13,6 +15,11 @@ const productSchema = new mongoose.Schema({
   butterCream: [{ name: String, price: Number }],
   freshCream: [{ name: String, price: Number }],
   exotic: [{ name: String, price: Number }],
+
+  category: {
+    type: String,
+    required: true,
+  }
 });
 
 module.exports = mongoose.model('Product', productSchema);

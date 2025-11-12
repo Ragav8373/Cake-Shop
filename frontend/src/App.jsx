@@ -79,78 +79,7 @@ const { cart } = useCart();
               </Badge>
               </div>
 
-              {/* {cartOpen && (
-                <div
-                  className="cart-dropdown p-3 shadow bg-white rounded"
-                  style={{
-                    position: "absolute",
-                    top: "40px",
-                    right: 0,
-                    width: "320px",
-                    maxHeight: "300px",
-                    overflowY: "auto",
-                    zIndex: 1050,
-                  }}
-                >
-                  {cartItems.length === 0 ? (
-                    <p className="text-center mb-0">Your cart is empty.</p>
-                  ) : (
-                    <>
-                      <ul className="list-unstyled mb-3">
-                        {cartItems.map((item, i) => (
-                          <li
-                            key={i}
-                            className="d-flex align-items-center mb-2 border-bottom pb-2"
-                          >
-                            <img
-                              src={`http://localhost:5000/uploads/${item.image}`}
-                              alt={item.productName}
-                              style={{ width: 50, height: 50, objectFit: "cover", borderRadius: "4px" }}
-                            />
-                            <div className="ms-2 flex-grow-1">
-                              <div><strong>{item.productName}</strong></div>
-                              <div style={{ fontSize: 13 }}>
-                                Flavour: {item.flavour} | Qty: {item.quantity}
-                              </div>
-                            </div>
-                            <button
-                              className="btn btn-sm btn-outline-danger"
-                              onClick={() => removeFromCart(item.productId)}
-                              aria-label="Remove item"
-                            >
-                              &times;
-                            </button>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <div className="d-flex justify-content-between">
-                        <button
-                          className="btn btn-primary btn-sm"
-                          onClick={() => {
-                            setCartOpen(false);
-                            navigate("/cart");
-                          }}
-                        >
-                          View Cart
-                        </button>
-                        <button
-                            className="btn btn-success btn-sm"
-                            onClick={() => {
-                              setCartOpen(false);
-                              navigate('/checkout', { state: orderData });
-                            }}
-                          >
-                            Checkout
-                          </button>
-
-                      </div>
-                    </>
-                  )}
-                </div>
-              )} */}
-
-
+              
            {cartOpen && (
   <div
     className="cart-dropdown p-3 shadow bg-white rounded"
