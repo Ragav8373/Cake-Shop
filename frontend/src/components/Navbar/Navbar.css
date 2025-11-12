@@ -1,0 +1,130 @@
+/* Navbar container */
+.navbar-container {
+  width: 100%;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  border-radius: 10px;
+}
+
+/* Phone */
+.phone {
+  font-size: 18px;
+  color: #702439;
+}
+.phone .timing {
+  font-size: 12px;
+  color: #555;
+  margin-left: 5px;
+}
+/* Search bar wrapper */
+.search-wrapper {
+  position: relative;
+}
+
+.searchbar {
+  height: 35px;
+  padding: 0 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 200px;
+}
+
+.searchicon {
+  position: absolute;
+  right: 10px;
+  font-size: 18px;
+  color: #702439;
+  cursor: pointer;
+}
+
+
+/* Cart */
+.carticon {
+  font-size: 28px;
+  color: #702439;
+}
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+}
+
+/* Cart dropdown */
+.cart-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 320px;
+  max-height: 300px;
+  overflow-y: auto;
+  background: #fff;
+  z-index: 1050;
+  padding: 1rem;
+}
+.cart-item-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.cart-item-info {
+  font-size: 13px;
+}
+
+/* Navbar links */
+.nav-link {
+  color: #702439 !important;
+  font-weight: 600;
+  font-size: 20px !important;
+}
+.navbar-nav {
+  gap: 1.5rem;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  min-width: 200px;
+  background-color: #f3eaf0;
+}
+
+/* Hover dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Divider */
+.hr1 {
+  opacity: 0.08;
+  margin-top: 7px;
+  width: 100%;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .top-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .phone {
+    text-align: center;
+  }
+  .cart-badge {
+    top: -5px;
+    right: -5px;
+  }
+  .logo {
+    width: 100px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .navbar-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

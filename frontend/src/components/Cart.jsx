@@ -50,13 +50,14 @@ function AllCategories() {
   }
 
   return (
+    
     <Fragment>
       <h2 className="luxury-title text-center">
         Our Wide Range of <br />
         Elegant and Luxury Cakes
       </h2>
 
-      <Container className="py-5">
+      <Container className="py-5 ">
         {groupedCategories.map((group, rowIndex) => (
           <Row key={rowIndex} className="g-5 mb-5">
             {group.map((category) => {
