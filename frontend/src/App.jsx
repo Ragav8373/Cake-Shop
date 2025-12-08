@@ -1,9 +1,8 @@
-
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "bootstrap/dist/js/bootstrap.bundle.min.js";
 // import 'owl.carousel/dist/assets/owl.carousel.css';
 // import 'owl.carousel/dist/assets/owl.theme.default.css';
-// import "./App.css"; 
+// import "./App.css";
 
 // import { Row, Col } from 'react-bootstrap';
 // import { Link, useNavigate } from "react-router-dom";
@@ -73,14 +72,13 @@
 //                 onClick={() => setCartOpen((prev) => !prev)}
 //                 style={{ userSelect: "none" }}
 //               >
-               
+
 //                 <IoCartOutline className="carticon" style={{ fontSize: 28 }} />
 //               <Badge bg="danger" className="badge ms-1">
 //                 {cartItems.length}
 //               </Badge>
 //               </div>
 
-              
 //            {cartOpen && (
 //   <div
 //     className="cart-dropdown p-3 shadow bg-white rounded"
@@ -155,7 +153,6 @@
 //     )}
 //   </div>
 // )}
-
 
 //             </div>
 //           </div>
@@ -239,8 +236,6 @@
 //           </div>
 //         </div>
 //       </nav>
-        
-
 
 //       <RouterPage />
 //        <Footer/>
@@ -250,11 +245,10 @@
 
 // export default App;
 
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
 import "./App.css";
 
 import RouterPage from "./RouterPage";
@@ -267,9 +261,9 @@ function App() {
       <Navbar />
       <RouterPage />
       <Footer />
+      <div></div>
     </div>
   );
 }
 
 export default App;
-
