@@ -261,7 +261,6 @@ function App() {
       <Navbar />
       <RouterPage />
       <Footer />
-      <div></div>
     </div>
   );
 }
