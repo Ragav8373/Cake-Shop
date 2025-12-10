@@ -58,23 +58,6 @@ export function CartProvider({ children }) {
     });
   };
 
-  // Update quantity
-  // const updateQuantity = (productId, flavour, newQuantity) => {
-  //   setCartItems((prev) =>
-  //     prev.map((item) => {
-  //       if (item.productId === productId && item.flavour === flavour) {
-  //         const qty = newQuantity > 0 ? newQuantity : 0.5;
-  //         return {
-  //           ...item,
-  //           quantity: qty,
-  //           totalPrice: calculateTotalPrice({ ...item, quantity: qty }),
-  //         };
-  //       }
-  //       return item;
-  //     })
-  //   );
-  // };
-
   const updateQuantity = (productId, flavour, newQty) => {
     setCartItems((prevItems) =>
       prevItems.map((item) => {

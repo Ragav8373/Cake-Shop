@@ -1,15 +1,13 @@
-/* Navbar container */
+/* Navbar container
 .navbar-container {
   width: 100%;
 }
 
-/* Logo */
 .logo {
   width: 120px;
   border-radius: 10px;
 }
 
-/* Phone */
 .phone {
   font-size: 18px;
   color: #702439;
@@ -19,7 +17,6 @@
   color: #555;
   margin-left: 5px;
 }
-/* Search bar wrapper */
 .search-wrapper {
   position: relative;
 }
@@ -43,7 +40,6 @@
 }
 
 
-/* Cart */
 .carticon {
   font-size: 28px;
   color: #702439;
@@ -54,7 +50,6 @@
   right: -10px;
 }
 
-/* Cart dropdown */
 .cart-dropdown {
   position: absolute;
   top: 40px;
@@ -76,7 +71,6 @@
   font-size: 13px;
 }
 
-/* Navbar links */
 .nav-link {
   color: #702439 !important;
   font-weight: 600;
@@ -86,25 +80,21 @@
   gap: 1.7rem;
 }
 
-/* Dropdown menu styling */
 .dropdown-menu {
   min-width: 200px;
   background-color: #f3eaf0;
 }
 
-/* Hover dropdown */
 .nav-item.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Divider */
 .hr1 {
   opacity: 0.08;
   margin-top: 7px;
   width: 100%;
 }
 
-/* Responsive */
 @media screen and (max-width: 768px) {
   .top-bar {
     flex-direction: column;
@@ -124,6 +114,96 @@
 @media screen and (max-width: 480px) {
   .navbar-nav {
     flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+} */
+
+/* Navbar container */
+.navbar-container {
+  width: 100%;
+  background: #fff;
+}
+
+/* Prevent wrapping → IMPORTANT */
+.navbar-nav {
+  white-space: nowrap;
+  gap: 1.2rem;
+}
+
+/* Nav links */
+.nav-link {
+  color: #702439 !important;
+  font-weight: 600;
+  font-size: 23px !important; /* was 24px, too large → wrapping */
+  padding: 8px 10px;
+}
+
+/* Logo */
+.logo {
+  width: 120px;
+  border-radius: 10px;
+}
+
+/* Phone */
+.phone {
+  font-size: 18px;
+  color: #702439;
+}
+.phone .timing {
+  font-size: 12px;
+  color: #555;
+  margin-left: 5px;
+}
+
+/* Cart */
+.carticon {
+  font-size: 28px;
+  color: #702439;
+}
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -9px;
+  background-color: #ae4361 !important;
+  border-radius: 50%;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  min-width: 200px;
+  background-color: #f3eaf0;
+}
+
+/* Show dropdown on hover (desktop) */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Divider */
+.hr1 {
+  opacity: 0.08;
+  margin-top: 7px;
+  width: 100%;
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    gap: 0.8rem;
+    white-space: normal; /* allow wrap on mobile */
+  }
+  .phone {
+    text-align: center;
+  }
+  .logo {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .navbar-nav {
     gap: 0.5rem;
     text-align: center;
   }

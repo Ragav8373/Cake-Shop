@@ -224,6 +224,250 @@
 
 // import React, { useState, useRef, useEffect } from "react";
 
+// import { Row, Col } from "react-bootstrap";
+// import { Link, useNavigate } from "react-router-dom";
+// import Badge from "react-bootstrap/Badge";
+// import { useCart } from "../../context/CartContext";
+
+// // Icons
+// import { FaBlenderPhone } from "react-icons/fa";
+// import { CiSearch } from "react-icons/ci";
+// import { IoCartOutline } from "react-icons/io5";
+
+// // Logo
+// import logo from "../../assets/logo1.png";
+
+// import "./Navbar.css";
+
+// const Navbar = () => {
+//   const { cartItems } = useCart();
+//   const navigate = useNavigate();
+
+//   return (
+//     <header className="navbar-container container-fluid mb-4">
+//       {/* ===== Top Bar: Logo + Contact + Cart ===== */}
+//       <div className="row align-items-center py-3 px-md-5">
+//         {/* Logo */}
+//         <div className="col-md-3 text-center text-md-start">
+//           <Link to="/">
+//             <img src={logo} alt="Logo" className="logo" />
+//           </Link>
+//         </div>
+
+//         {/* Contact + Search + Cart */}
+//         <div className="col-md-9">
+//           <div className="d-flex justify-content-end align-items-center gap-3 flex-wrap">
+//             {/* Phone */}
+//             <p className="mb-1 phone">
+//               <FaBlenderPhone className="me-1" /> +91 68745 25469
+//               <span className="timing">(08 AM - 11 PM)</span>
+//             </p>
+
+//             {/* Search Bar */}
+//             {/* <div className="search-wrapper d-flex align-items-center">
+//               <input
+//                 type="text"
+//                 className="searchbar"
+//                 placeholder="Search cakes..."
+//               />
+//               <CiSearch className="searchicon" />
+//             </div> */}
+
+//             {/* Cart Icon - Directly navigates to View Cart */}
+//             <div className="position-relative">
+//               <div
+//                 className="d-flex align-items-center cursor-pointer"
+//                 onClick={() => navigate("/cart")}
+//               >
+//                 <IoCartOutline className="carticon" />
+//                 {cartItems.length > 0 && (
+//                   <Badge bg="danger" className="cart-badge">
+//                     {cartItems.length}
+//                   </Badge>
+//                 )}
+//               </div>
+//             </div>
+//           </div>
+//           <hr className="hr1" />
+//         </div>
+//       </div>
+
+//       {/* ===== Navbar Links ===== */}
+//       <nav className="navbar navbar-expand-md px-3 px-md-5">
+//         <div className="container-fluid">
+//           <button
+//             className="navbar-toggler"
+//             type="button"
+//             data-bs-toggle="collapse"
+//             data-bs-target="#navbarContent"
+//           >
+//             <span className="navbar-toggler-icon"></span>
+//           </button>
+
+//           <div
+//             className="collapse navbar-collapse justify-content-center"
+//             id="navbarContent"
+//           >
+//             <ul className="navbar-nav gap-3">
+//               <li className="nav-item">
+//                 <Link className="nav-link" to="/">
+//                   Home
+//                 </Link>
+//               </li>
+
+//               {/* Cakes Dropdown */}
+//               <li className="nav-item dropdown">
+//                 <Link
+//                   className="nav-link dropdown-toggle"
+//                   to="#"
+//                   role="button"
+//                   data-bs-toggle="dropdown"
+//                 >
+//                   Cakes
+//                 </Link>
+//                 <ul className="dropdown-menu">
+//                   <li>
+//                     <Row>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/wedding-cakes"
+//                         >
+//                           Wedding Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/anniversary-cakes"
+//                         >
+//                           Anniversary Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link className="dropdown-item" to="/cakes/celebration">
+//                           Celebration
+//                         </Link>
+//                       </Col>
+//                     </Row>
+//                     <Row>
+//                       <Col sm={12}>
+//                         <Link className="dropdown-item" to="/cakes/baby-shower">
+//                           Baby Shower
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/holy-communion"
+//                         >
+//                           Holy Communion
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link className="dropdown-item" to="/cakes/smash-cakes">
+//                           Smash Cakes
+//                         </Link>
+//                       </Col>
+//                     </Row>
+//                     <Row>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/half-birthday-cakes"
+//                         >
+//                           Half Birthday Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/first-birthday-cakes"
+//                         >
+//                           1st Birthday Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/cake-for-boys"
+//                         >
+//                           Cake for Boys
+//                         </Link>
+//                       </Col>
+//                     </Row>
+//                     <Row>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/cake-for-girls"
+//                         >
+//                           Cake for Girls
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link className="dropdown-item" to="/cakes/theme-cakes">
+//                           Theme Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link className="dropdown-item" to="/cakes/heart-shape">
+//                           Heart Shape
+//                         </Link>
+//                       </Col>
+//                     </Row>
+//                     <Row>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/drip-naked-cakes"
+//                         >
+//                           Drip & Naked Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link
+//                           className="dropdown-item"
+//                           to="/cakes/cheese-cakes"
+//                         >
+//                           Cheese Cakes
+//                         </Link>
+//                       </Col>
+//                       <Col sm={12}>
+//                         <Link className="dropdown-item" to="/cakes/photo-cakes">
+//                           Photo Cakes
+//                         </Link>
+//                       </Col>
+//                     </Row>
+//                   </li>
+//                 </ul>
+//               </li>
+
+//               <li className="nav-item">
+//                 <Link className="nav-link" to="/about">
+//                   About Us
+//                 </Link>
+//               </li>
+//               <li className="nav-item">
+//                 <Link className="nav-link" to="/contact">
+//                   Contact Us
+//                 </Link>
+//               </li>
+//               <li className="nav-item">
+//                 <Link className="nav-link" to="/gallery">
+//                   Gallery
+//                 </Link>
+//               </li>
+//             </ul>
+//           </div>
+//         </div>
+//       </nav>
+//     </header>
+//   );
+// };
+
+// export default Navbar;
+
 import { Row, Col } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import Badge from "react-bootstrap/Badge";
@@ -231,7 +475,6 @@ import { useCart } from "../../context/CartContext";
 
 // Icons
 import { FaBlenderPhone } from "react-icons/fa";
-import { CiSearch } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 
 // Logo
@@ -244,221 +487,183 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="navbar-container container-fluid mb-4">
-      {/* ===== Top Bar: Logo + Contact + Cart ===== */}
-      <div className="row align-items-center py-3 px-md-5">
+    <header className="container-fluid navbar-container px-md-5 py-3">
+      <nav className="navbar navbar-expand-md">
         {/* Logo */}
-        <div className="col-md-3 text-center text-md-start">
-          <Link to="/">
-            <img src={logo} alt="Logo" className="logo" />
-          </Link>
-        </div>
+        <Link to="/" className="navbar-brand">
+          <img src={logo} alt="Logo" className="logo" />
+        </Link>
 
-        {/* Contact + Search + Cart */}
-        <div className="col-md-9">
-          <div className="d-flex justify-content-end align-items-center gap-3 flex-wrap">
-            {/* Phone */}
-            <p className="mb-1 phone">
-              <FaBlenderPhone className="me-1" /> +91 68745 25469
-              <span className="timing">(08 AM - 11 PM)</span>
-            </p>
+        {/* Mobile Toggle */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-            {/* Search Bar */}
-            <div className="search-wrapper d-flex align-items-center">
-              <input
-                type="text"
-                className="searchbar"
-                placeholder="Search cakes..."
-              />
-              <CiSearch className="searchicon" />
-            </div>
+        {/* ===== Single Line Menu ===== */}
+        <div
+          className="collapse navbar-collapse justify-content-center"
+          id="navbarContent"
+        >
+          <ul className="navbar-nav gap-3 align-items-center">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
 
-            {/* Cart Icon - Directly navigates to View Cart */}
-            <div className="position-relative">
-              <div
-                className="d-flex align-items-center cursor-pointer"
-                onClick={() => navigate("/cart")}
+            {/* Cakes Dropdown */}
+            <li className="nav-item dropdown">
+              <Link
+                className="nav-link dropdown-toggle"
+                to="#"
+                role="button"
+                data-bs-toggle="dropdown"
               >
-                <IoCartOutline className="carticon" />
-                {cartItems.length > 0 && (
-                  <Badge bg="danger" className="cart-badge">
-                    {cartItems.length}
-                  </Badge>
-                )}
-              </div>
-            </div>
-          </div>
-          <hr className="hr1" />
-        </div>
-      </div>
+                Cakes
+              </Link>
 
-      {/* ===== Navbar Links ===== */}
-      <nav className="navbar navbar-expand-md px-3 px-md-5">
-        <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarContent"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+              <ul className="dropdown-menu mega-menu p-3">
+                <Row>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/wedding-cakes">
+                      Wedding Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link
+                      className="dropdown-item"
+                      to="/cakes/anniversary-cakes"
+                    >
+                      Anniversary Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/celebration">
+                      Celebration
+                    </Link>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/baby-shower">
+                      Baby Shower
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/holy-communion">
+                      Holy Communion
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/smash-cakes">
+                      Smash Cakes
+                    </Link>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={12}>
+                    <Link
+                      className="dropdown-item"
+                      to="/cakes/half-birthday-cakes"
+                    >
+                      Half Birthday Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link
+                      className="dropdown-item"
+                      to="/cakes/first-birthday-cakes"
+                    >
+                      1st Birthday Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/cake-for-boys">
+                      Cake for Boys
+                    </Link>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/cake-for-girls">
+                      Cake for Girls
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/theme-cakes">
+                      Theme Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/heart-shape">
+                      Heart Shape
+                    </Link>
+                  </Col>
+                </Row>
+                <Row>
+                  <Col sm={12}>
+                    <Link
+                      className="dropdown-item"
+                      to="/cakes/drip-naked-cakes"
+                    >
+                      Drip & Naked Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/cheese-cakes">
+                      Cheese Cakes
+                    </Link>
+                  </Col>
+                  <Col sm={12}>
+                    <Link className="dropdown-item" to="/cakes/photo-cakes">
+                      Photo Cakes
+                    </Link>
+                  </Col>
+                </Row>
+              </ul>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/about">
+                About Us
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
+                Contact Us
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/gallery">
+                Gallery
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Right Side: Phone + Cart */}
+        <div className="d-flex align-items-center gap-3">
+          <p className="mb-0 phone">
+            <FaBlenderPhone className="me-1" /> +91 68745 25469
+          </p>
 
           <div
-            className="collapse navbar-collapse justify-content-center"
-            id="navbarContent"
+            className="position-relative cursor-pointer"
+            onClick={() => navigate("/cart")}
           >
-            <ul className="navbar-nav gap-3">
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
-
-              {/* Cakes Dropdown */}
-              <li className="nav-item dropdown">
-                <Link
-                  className="nav-link dropdown-toggle"
-                  to="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                >
-                  Cakes
-                </Link>
-                <ul className="dropdown-menu">
-                  <li>
-                    <Row>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/wedding-cakes"
-                        >
-                          Wedding Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/anniversary-cakes"
-                        >
-                          Anniversary Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link className="dropdown-item" to="/cakes/celebration">
-                          Celebration
-                        </Link>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col sm={12}>
-                        <Link className="dropdown-item" to="/cakes/baby-shower">
-                          Baby Shower
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/holy-communion"
-                        >
-                          Holy Communion
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link className="dropdown-item" to="/cakes/smash-cakes">
-                          Smash Cakes
-                        </Link>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/half-birthday-cakes"
-                        >
-                          Half Birthday Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/first-birthday-cakes"
-                        >
-                          1st Birthday Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/cake-for-boys"
-                        >
-                          Cake for Boys
-                        </Link>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/cake-for-girls"
-                        >
-                          Cake for Girls
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link className="dropdown-item" to="/cakes/theme-cakes">
-                          Theme Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link className="dropdown-item" to="/cakes/heart-shape">
-                          Heart Shape
-                        </Link>
-                      </Col>
-                    </Row>
-                    <Row>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/drip-naked-cakes"
-                        >
-                          Drip & Naked Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link
-                          className="dropdown-item"
-                          to="/cakes/cheese-cakes"
-                        >
-                          Cheese Cakes
-                        </Link>
-                      </Col>
-                      <Col sm={12}>
-                        <Link className="dropdown-item" to="/cakes/photo-cakes">
-                          Photo Cakes
-                        </Link>
-                      </Col>
-                    </Row>
-                  </li>
-                </ul>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About Us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact Us
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/gallery">
-                  Gallery
-                </Link>
-              </li>
-            </ul>
+            <IoCartOutline className="carticon" />
+            {cartItems.length > 0 && (
+              <Badge bg="danger" className="cart-badge">
+                {cartItems.length}
+              </Badge>
+            )}
           </div>
         </div>
       </nav>
