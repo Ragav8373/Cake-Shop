@@ -1,17 +1,18 @@
 html,
 body {
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 .container-fluid {
   --bs-gutter-x: 0 !important;
   --bs-gutter-y: 0 !important;
 }
+/* 
 .navbarc {
   position: sticky !important;
   top: 0;
   z-index: 9999;
   background: #ffffff;
-}
+} */
 
 
 .top-header {

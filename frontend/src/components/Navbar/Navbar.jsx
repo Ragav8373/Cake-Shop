@@ -353,9 +353,9 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <header className="w-100 p-0 container-fluid navbarc">
+    <header className="w-100 p-0 container-fluid ">
       {/* Top Header */}
-      <div className="top-header d-flex justify-content-between align-items-center py-2 px-md-5 px-3 ">
+      <div className="top-header d-flex justify-content-between align-items-center py-2 px-md-5 px-3">
         <p className="m-0 header-text">
           <FaBlenderPhone className="me-1" /> +91 9876543210
         </p>
@@ -377,7 +377,7 @@ const Navbar = () => {
       </div>
 
       {/* Main Navbar */}
-      <nav className="navbar navbar-expand-md px-md-5 px-3 navbarc">
+      <nav className="navbar navbar-expand-md px-md-5 px-3">
         <div className="navbar-container d-flex align-items-center w-100 ">
           {/* Logo */}
           <Link to="/" className="navbar-brand">
