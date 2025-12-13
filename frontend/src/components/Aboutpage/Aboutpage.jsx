@@ -10,7 +10,7 @@ function Aboutpage() {
       <Container fluid>
         <Row>
           <Col sm={12} md={6} lg={6}>
-            <div className="abouttxt">
+            <div className="abouttxt p-3">
               <h1 className="abth1">Aila Cakes & Cafe</h1>
               <p className="abtp1">Where every slice is divine</p>
               <p className="abtp2">

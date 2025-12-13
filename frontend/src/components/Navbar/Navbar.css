@@ -87,37 +87,18 @@
 /* ============================
    TOP SMALL HEADER
 ============================ */
-
-.navbar {
-  --bs-navbar-padding-x: 0;
-  --bs-navbar-padding-y: 0;
-}
-.container-fluid {
-  --bs-gutter-x: 0;
-}
-
-.row {
-  --bs-gutter-x: 0;
-}
-
-html,
-body {
-  overflow-x: hidden;
-}
-
+/* Top Header */
 .top-header {
   width: 100%;
-  background: #f3eaf0; /* soft pinkish tone */
+  background: #f3eaf0;
   border-bottom: 1px solid #e6d4dc;
-  padding: 6px 0; /* small clean padding */
+  padding: 6px 0;
   font-size: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  --bs-gutter-x: 0 !important;
 }
 
-/* Left side text (email, phone, address) */
 .top-header .header-text {
   color: #702439;
   font-weight: 500;
@@ -126,12 +107,6 @@ body {
   gap: 4px;
 }
 
-.top-header .header-text svg {
-  font-size: 16px;
-  color: #ae4361;
-}
-
-/* Social Icons */
 .top-header .social-icon {
   color: #702439;
   font-size: 18px;
@@ -143,144 +118,80 @@ body {
   transform: scale(1.1);
 }
 
-/* ============================
-   NAVBAR PART (your existing)
-============================ */
+/* Navbar */
 .navbar-container {
-  width: 100%;
-  background: #fff;
-}
-
-/* Prevent wrapping */
-.navbar-nav {
-  white-space: nowrap;
-  gap: 1.2rem;
-}
-
-/* Nav links */
-.nav-link {
+   display: flex; 
+   align-items: center;
+    width: 100%; 
+  }
+.navbar-nav-center {
+   display: flex; 
+   flex: 1; justify-content:
+    center;
+     align-items: center; 
+    }
+.nav-link { 
   color: #702439 !important;
-  font-weight: 600;
-  font-size: 23px !important;
-  padding: 8px 10px;
+   font-weight: 600; 
+   font-size: 20px; }
+.logo { 
+  width: 120px; 
 }
-
-/* Logo */
-.logo {
-  width: 120px;
-  border-radius: 10px;
-}
-
-/* Phone */
-.phone {
-  font-size: 18px;
-  color: #702439;
-}
-.phone .timing {
-  font-size: 12px;
-  color: #555;
-  margin-left: 5px;
-}
-
-/* Cart */
 .carticon {
-  font-size: 28px;
+   font-size: 28px; 
   color: #702439;
-}
-.cart-badge {
-  position: absolute;
+ }
+.cart-badge { 
+  position: absolute; 
   top: -8px;
-  right: -9px;
-  background-color: #ae4361 !important;
-  border-radius: 50%;
+  right: -9px; 
+  background-color: #ae4361 !important; 
+  border-radius: 50%; 
 }
-
-/* Dropdown */
-.dropdown-menu {
-  min-width: 200px;
-  background-color: #f3eaf0;
-}
-
-/* Hover to open dropdown */
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* Divider */
-.hr1 {
-  opacity: 0.08;
-  margin-top: 7px;
-  width: 100%;
-}
-
-.search-wrapper {
+.search-wrapper { 
   position: relative;
-  width: 220px; /* adjust as needed */
-}
-
-.search-input {
-  width: 100%;
-  padding-right: 35px; /* space for the icon */
-  font-size: 14px;
-}
-
-.search-btn {
+   width: 200px; }
+.search-btn { 
   position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
-  border: none;
-  background: transparent;
-  color: #702439; /* matches your theme */
-  cursor: pointer;
-  font-size: 16px;
-}
+   right: 5px; top: 50%; 
+   transform: translateY(-50%); 
+   border: none; 
+   background: transparent;
+   color: #702439; 
+   cursor: pointer;
+    font-size: 16px;
+     }
 
-.search-btn:focus {
-  outline: none;
-}
-
-/* ============================
-   RESPONSIVE FOR SMALL HEADER
-============================ */
+/* Mobile */
 @media screen and (max-width: 768px) {
-  .top-header {
-    padding: 8px 10px;
-    flex-direction: column;
+  /* Top header: show only phone */
+  .top-header { 
+    flex-direction: column; 
     text-align: center;
-    gap: 5px;
-  }
+     gap: 5px; 
+    }
+  .top-header .header-text:nth-child(n+2) { 
+    display: none;
+   }
+  .top-header .social-icon { 
+    display: none;
+   }
 
-  .top-header .header-text {
-    font-size: 13px;
+  .navbar-container {
+     flex-wrap: wrap; 
+     justify-content: space-between;
+     }
+  .navbar-nav-center { 
+    display: none; 
   }
-
-  .top-header .social-icon {
-    font-size: 20px;
-  }
-
-  .navbar-nav {
-    flex-direction: column !important;
-    gap: 0.8rem;
-    white-space: normal;
-  }
-
+  .collapse.show .navbar-nav-center {
+     display: flex; 
+     flex-direction: column; 
+     width: 100%; }
+  .search-wrapper.desktop {
+     display: none; 
+    }
   .logo {
-    width: 100px;
-  }
-
-  .phone {
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .top-header {
-    font-size: 12px;
-  }
-
-  .navbar-nav {
-    gap: 0.5rem;
-    text-align: center;
-  }
+     width: 100px;
+     }
 }
