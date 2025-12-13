@@ -1,93 +1,12 @@
-/* 
-
-.navbar-container {
-  width: 100%;
-  background: #fff;
+html,
+body {
+  overflow-x: hidden;
+}
+.container-fluid {
+  --bs-gutter-x: 0 !important;
+  --bs-gutter-y: 0 !important;
 }
 
-.navbar-nav {
-  white-space: nowrap;
-  gap: 1.2rem;
-}
-
-.nav-link {
-  color: #702439 !important;
-  font-weight: 600;
-  font-size: 23px !important; 
-  padding: 8px 10px;
-}
-
-.logo {
-  width: 120px;
-  border-radius: 10px;
-}
-
-.phone {
-  font-size: 18px;
-  color: #702439;
-}
-.phone .timing {
-  font-size: 12px;
-  color: #555;
-  margin-left: 5px;
-}
-
-.carticon {
-  font-size: 28px;
-  color: #702439;
-}
-.cart-badge {
-  position: absolute;
-  top: -8px;
-  right: -9px;
-  background-color: #ae4361 !important;
-  border-radius: 50%;
-}
-
-.dropdown-menu {
-  min-width: 200px;
-  background-color: #f3eaf0;
-}
-
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.hr1 {
-  opacity: 0.08;
-  margin-top: 7px;
-  width: 100%;
-}
-
-
-@media screen and (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column !important;
-    gap: 0.8rem;
-    white-space: normal; 
-  }
-  .phone {
-    text-align: center;
-  }
-  .logo {
-    width: 100px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .navbar-nav {
-    gap: 0.5rem;
-    text-align: center;
-  }
-} */
-
-/* ============================
-   TOP SMALL HEADER
-============================ */
-/* ============================
-   TOP SMALL HEADER
-============================ */
-/* Top Header */
 .top-header {
   width: 100%;
   background: #f3eaf0;
@@ -120,78 +39,104 @@
 
 /* Navbar */
 .navbar-container {
-   display: flex; 
-   align-items: center;
-    width: 100%; 
-  }
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
 .navbar-nav-center {
-   display: flex; 
-   flex: 1; justify-content:
-    center;
-     align-items: center; 
-    }
-.nav-link { 
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.nav-link {
   color: #702439 !important;
-   font-weight: 600; 
-   font-size: 20px; }
-.logo { 
-  width: 120px; 
+  font-weight: 600;
+  font-size: 20px;
+}
+.logo {
+  width: 100px;
 }
 .carticon {
-   font-size: 28px; 
+  font-size: 28px;
   color: #702439;
- }
-.cart-badge { 
-  position: absolute; 
-  top: -8px;
-  right: -9px; 
-  background-color: #ae4361 !important; 
-  border-radius: 50%; 
 }
-.search-wrapper { 
-  position: relative;
-   width: 200px; }
-.search-btn { 
+.cart-badge {
   position: absolute;
-   right: 5px; top: 50%; 
-   transform: translateY(-50%); 
-   border: none; 
-   background: transparent;
-   color: #702439; 
-   cursor: pointer;
-    font-size: 16px;
-     }
+  top: -8px;
+  right: -9px;
+  background-color: #ae4361 !important;
+  border-radius: 50%;
+}
+.search-wrapper {
+  position: relative;
+  width: 200px;
+}
+.search-btn {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  color: #702439;
+  cursor: pointer;
+  font-size: 16px;
+}
 
 /* Mobile */
 @media screen and (max-width: 768px) {
   /* Top header: show only phone */
-  .top-header { 
-    flex-direction: column; 
+  .top-header {
+    flex-direction: column;
     text-align: center;
-     gap: 5px; 
-    }
-  .top-header .header-text:nth-child(n+2) { 
+    gap: 5px;
+  }
+  .top-header .header-text:nth-child(n + 2) {
     display: none;
-   }
-  .top-header .social-icon { 
+  }
+  .top-header .social-icon {
     display: none;
-   }
+  }
 
   .navbar-container {
-     flex-wrap: wrap; 
-     justify-content: space-between;
-     }
-  .navbar-nav-center { 
-    display: none; 
+    /* flex-wrap: wrap; */
+    justify-content: space-between;
+  }
+  .navbar-nav-center {
+    display: none;
   }
   .collapse.show .navbar-nav-center {
-     display: flex; 
-     flex-direction: column; 
-     width: 100%; }
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   .search-wrapper.desktop {
-     display: none; 
-    }
+    display: none;
+  }
   .logo {
-     width: 100px;
-     }
+    width: 100px;
+  }
+  .nav-link {
+    font-size: 10px;
+  }
+  .search-wrapper {
+    position: relative;
+    width: 150px;
+  }
+  .search-btn {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 468px) {
+  .nav-link {
+    font-size: 20px;
+  }
+  .search-wrapper {
+    position: relative;
+    width: 200px;
+  }
+  .search-btn {
+    font-size: 16px;
+  }
 }
