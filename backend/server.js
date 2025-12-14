@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 const app = express();
+require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
 const DB_URL = 'mongodb+srv://ragav9760:gKo7TXGMJOmzrDUV@firstproject.ypeqcz6.mongodb.net/?retryWrites=true&w=majority&appName=FirstProject';
