@@ -1,23 +1,32 @@
-const mongoose = require('mongoose');
-
-const productSchema = new mongoose.Schema({
-  name: String,
-  model: String,
-  weight: String,
-  message: String,
-  quantity: Number,
-  unitPrice: Number,
-});
+import mongoose from "mongoose";
 
 const orderSchema = new mongoose.Schema({
   name: { type: String, required: true },
-  email: { type: String, required: true },
+  email: String,
   mobile: { type: String, required: true },
-  deliveryMethod: { type: String, required: true },
-  paymentMethod: { type: String, required: true },
-  product: productSchema,  // embedded product object
-  total: { type: Number, required: true },
-  createdAt: { type: Date, default: Date.now }
-});
+  deliveryMethod: String,
+  paymentMethod: String,
+  address: String,
+  pincode: String,
+  deliveryDate: String,
+  deliveryTime: String,
+  pickupDate: String,
+  pickupTime: String,
+  items: [
+    {
+      productId: String,
+      productName: String,
+      image: String,
+      flavour: String,
+      quantity: Number,
+      features: [String],
+      message: String,
+      totalPrice: Number,
+    },
+  ],
+  totalQuantity: Number,
+  totalPrice: Number,
+  status: { type: String, default: "Pending" },
+}, { timestamps: true });
 
-module.exports = mongoose.model('Order', orderSchema);
+export default mongoose.model("Order", orderSchema);

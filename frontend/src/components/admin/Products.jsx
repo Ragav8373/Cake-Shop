@@ -1,23 +1,22 @@
-import { useState } from "react";
-import ProductList from './ProductList';
-import ProductForm from './ProductForm';
-
+import { useNavigate } from "react-router-dom";
+import ProductList from "./ProductList";
 
 const Products = () => {
-  const [editProduct, setEditProduct] = useState(null);
-  const [reload, setReload] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <div>
-      <h2>Manage Products</h2>
-      <ProductForm
-        editProduct={editProduct}
-        onSuccess={() => {
-          setReload(!reload);
-          setEditProduct(null);
-        }}
-      />
-      <ProductList key={reload} onEdit={setEditProduct} />
+    <div className="products-page">
+      <div className="products-header">
+        <h2>Products</h2>
+        <button
+          className="add-product-btn"
+          onClick={() => navigate("/admin/addproduct")}
+        >
+          + Add Product
+        </button>
+      </div>
+
+      <ProductList />
     </div>
   );
 };

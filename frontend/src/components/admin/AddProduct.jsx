@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const emptyRow = { name: "", price: "" };
 
-const AddProduct = () => {
+const AddProduct  = () => {
   const [formData, setFormData] = useState({
     name: "",
     price: "",
@@ -259,4 +259,4 @@ const AddProduct = () => {
   );
 };
 
-export default AddProduct;
+export default AddProduct ;

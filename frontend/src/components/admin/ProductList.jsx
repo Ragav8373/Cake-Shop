@@ -1,51 +1,69 @@
 import { useEffect, useState } from "react";
-import { fetchProducts, deleteProduct } from "../../api";
+import { useNavigate } from "react-router-dom";
 
-const ProductList = ({ onEdit }) => {
+const ProductList = () => {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-  const loadProducts = async () => {
-    try {
-      const data = await fetchProducts();
-      setProducts(data);
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    } finally {
-      setLoading(false);
-    }
+  const fetchProducts = () => {
+    fetch("http://localhost:5000/api/products")
+      .then((res) => res.json())
+      .then((data) => setProducts(data))
+      .catch((err) => console.error(err));
   };
 
   useEffect(() => {
-    loadProducts();
+    fetchProducts();
   }, []);
 
   const handleDelete = async (id) => {
     if (!window.confirm("Are you sure you want to delete this product?")) return;
 
     try {
-      await deleteProduct(id);
-      setProducts((prev) => prev.filter((p) => p._id !== id));
-    } catch (error) {
-      console.error("Error deleting product:", error);
+      const res = await fetch(
+        `http://localhost:5000/api/products/${id}`,
+        { method: "DELETE" }
+      );
+
+      if (res.ok) {
+        fetchProducts();
+      } else {
+        alert("Failed to delete product");
+      }
+    } catch (err) {
+      console.error(err);
     }
   };
 
-  if (loading) return <p>Loading products...</p>;
-  if (products.length === 0) return <p>No products found.</p>;
-
   return (
-    <div>
-      <h2>Product List</h2>
-      {products.map((product) => (
-        <div key={product._id} style={{ marginBottom: "8px" }}>
-          {product.name} - ₹{product.price}
-          <button style={{ marginLeft: "8px" }} onClick={() => onEdit(product)}>
-            Edit
-          </button>
-          <button style={{ marginLeft: "4px" }} onClick={() => handleDelete(product._id)}>
-            Delete
-          </button>
+    <div className="product-grid">
+      {products.map((p) => (
+        <div key={p._id} className="product-card">
+          <div className="product-img-wrap">
+            <img
+              src={`http://localhost:5000/uploads/${p.image}`}
+              alt={p.name}
+            />
+            <div className="product-actions">
+              <button
+                className="edit-btn"
+                onClick={() => navigate(`/admin/edit-product/${p._id}`)}
+                title="Edit"
+              >
+                ✏️
+              </button>
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(p._id)}
+                title="Delete"
+              >
+                🗑️
+              </button>
+            </div>
+          </div>
+
+          <h4 className="product-name">{p.name}</h4>
+          <p className="product-price">₹ {p.price} / KG</p>
         </div>
       ))}
     </div>

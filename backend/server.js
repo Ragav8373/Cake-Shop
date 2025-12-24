@@ -1,38 +1,60 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const path = require('path');
-const cors = require('cors');
+
+
+
+import express from "express";
+import mongoose from "mongoose";
+import path from "path";
+import cors from "cors";
+import dotenv from "dotenv";
+import { fileURLToPath } from "url";
+
+import productRoutes from "./routes/product.js";
+import orderRoutes from "./routes/order.js";
+import userRoutes from "./routes/userRouts.js";
+import contactRoutes from "./routes/contactRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+
+dotenv.config();
+
 const app = express();
-require("dotenv").config();
-
 const PORT = process.env.PORT || 5000;
-const DB_URL = 'mongodb+srv://ragav9760:gKo7TXGMJOmzrDUV@firstproject.ypeqcz6.mongodb.net/?retryWrites=true&w=majority&appName=FirstProject';
 
-mongoose.connect(DB_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log(' MongoDB Connected'))
-.catch((err) => console.error(' MongoDB Connection Error:', err));
+/* Fix __dirname in ES module */
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-app.use(cors()); 
-app.use(express.json()); 
-app.use(express.urlencoded({ extended: true })); 
+const DB_URL =
+  "mongodb+srv://ragav9760:gKo7TXGMJOmzrDUV@firstproject.ypeqcz6.mongodb.net/?retryWrites=true&w=majority&appName=FirstProject";
 
-app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+/* MongoDB connection */
+mongoose
+  .connect(DB_URL)
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.error("MongoDB Connection Error:", err));
 
-const productRoutes = require('./routes/product');
-const orderRoutes = require('./routes/order');
-const contactRoutes = require('./routes/contactRoutes');
-const adminRoutes = require("./routes/adminRoutes");
-app.use('/api/products', productRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/contact', contactRoutes);
+/* Middlewares */
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+/* Static uploads */
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+/* Routes */
+app.use("/api/products", productRoutes);
+app.use("/api/orders", orderRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/contact", contactRoutes);
 app.use("/api/admin", adminRoutes);
-app.get('/', (req, res) => {
-  res.send(' Backend API is running...');
+
+/* Test route */
+app.get("/", (req, res) => {
+  res.send("Backend API is running...");
 });
 
+/* Server */
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+

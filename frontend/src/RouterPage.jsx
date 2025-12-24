@@ -119,26 +119,21 @@ import CheeseCakes from "./components/cakes/Cheese-cakes";
 import PhotoCakes from "./components/cakes/Photo-cakes";
 
 /* Cart */
-import AddProduct from "./components/AddProduct";
 import CartDetails from "./components/CartDetails";
 import Checkout from "./components/Checkout";
 import ViewCart from "./components/ViewCart";
 
 /* Admin */
-// import AdminLogin from "./components/admin/AdminLogin";
-// import AdminProtectedRoute from "./components/admin/AdminProtectedRoute";
-// import Sidebar from "./components/admin/Sidebar";
-// import Dashboard from "./components/admin/Dashboard";
-// import Products from "./components/admin/Products";
-// import ProductForm from "./components/admin/ProductForm";
-// import ProductList from "./components/admin/ProductList";
 import AdminProtectedRoute from "./components/admin/AdminProtectedRoute";
 import AdminLogin from "./components/admin/AdminLogin";
 import Sidebar from "./components/admin/Sidebar";
 import Dashboard from "./components/admin/Dashboard";
 import Products from "./components/admin/Products";
-import ProductForm from "./components/admin/ProductForm";
+import AddProduct from "./components/admin/AddProduct";
 import ProductList from "./components/admin/ProductList";
+import EditProduct from "./components/admin/EditProduct";
+import Users from "./components/admin/Users";
+import Orders from "./components/admin/Orders";
 
 const RouterPage = () => {
   return (
@@ -168,34 +163,25 @@ const RouterPage = () => {
       <Route path="/cakes/photo-cakes" element={<PhotoCakes />} />
 
       {/* ---------- CART ---------- */}
-      <Route path="/addproduct" element={<AddProduct />} />
+      {/* <Route path="/addproduct" element={<AddProduct />} /> */}
       <Route path="/product/:id" element={<CartDetails />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/cart" element={<ViewCart />} />
 
       {/* ---------- ADMIN LOGIN ---------- */}
   <Route path="/admin/login" element={<AdminLogin />} />
-
-      {/* ---------- PROTECTED ADMIN ROUTES ---------- */}
-      {/* <Route element={<AdminProtectedRoute />}>
-        <Route
-          path="/admin"
-          element={<Sidebar />}
-        >
-          <Route path="dashboard" element={<Dashboard />} />
-          <Route path="products" element={<Products />} />
-          <Route path="productform" element={<ProductForm />} />
-          <Route path="productlist" element={<ProductList />} />
-        </Route>
-      </Route> */}
         <Route element={<AdminProtectedRoute />}>
 
     <Route path="/admin" element={<Sidebar />}>
       <Route index element={<Dashboard />} />
       <Route path="dashboard" element={<Dashboard />} />
       <Route path="products" element={<Products />} />
-      <Route path="productform" element={<ProductForm />} />
+      <Route path="AddProduct" element={<AddProduct />} />
       <Route path="productlist" element={<ProductList />} />
+      <Route path="/admin/edit-product/:id" element={<EditProduct />} />
+      <Route path="/admin/users" element={<Users />} />
+     <Route path="/admin/orders" element={<Orders />} />
+     
     </Route>
 
   </Route>
